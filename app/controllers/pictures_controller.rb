@@ -11,11 +11,11 @@ class PicturesController < ApplicationController
 	end	
 	
 	def new
-	  @picture = Picture.new
+	  @picture = current_user.pictures.build
 	end
 
 	def create
-	  @picture = Picture.new(picture_params)
+	  @picture = current_user.pictures.build(picture_params)
 	  if @picture.save
 	    redirect_to @picture, notice:	'Picture was posted!'
 	  else
