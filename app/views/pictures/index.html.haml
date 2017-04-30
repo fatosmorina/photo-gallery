@@ -1,5 +1,8 @@
-- @pictures.each do |picture|
-	= link_to (image_tag picture.image.url(:medium)), picture
-	%h2= link_to picture.title, picture
+.col-md-6.col-md-offset-3
+	#pics.transitions.enabled
+		- @pictures.each do |picture|
+			.box.panel.panel-default
+				= link_to (image_tag picture.image.url(:medium)), picture
+				%h2= link_to picture.title, picture
 
 
