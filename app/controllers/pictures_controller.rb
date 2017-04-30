@@ -4,7 +4,7 @@ class PicturesController < ApplicationController
 
 
 	def index
-	  
+	  @pictures = Picture.all.order("created_at DESC")
 	end
 
 	def show
@@ -22,6 +22,22 @@ class PicturesController < ApplicationController
 	  	render 'new'
 	  end	
 	end
+
+	def edit
+	end	
+
+	def update
+	  if @picture.update(picture_params)
+	  	redirect_to @picture, notice: 'Congratulations! Picture has been updated.'
+	  else
+	  	render 'edit'
+	  end		
+	end	
+
+	def destroy
+	 @picture.destroy
+	 redirect_to root_path	
+	end	
 
 	private
 
