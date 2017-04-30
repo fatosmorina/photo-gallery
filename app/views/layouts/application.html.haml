@@ -1,0 +1,12 @@
+
+%html
+%head
+	%title Photo Gallery
+	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+	= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+	= csrf_meta_tags
+
+%body
+	-flash.each do |name, message|
+		= content_tag :div, message, class: "alert alert-info"
+	= yield

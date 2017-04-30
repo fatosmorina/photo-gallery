@@ -5,9 +5,9 @@
 		= pluralize(@picture.erors.count, "error")	
 		prevented this picture from saving
 		%ul
-			-@picture.erors.full_message.each do |message|
+			-@picture.erors.full_messages.each do |message|
 				%li= message 	 	  
-
+		
 	.form-gorup
 		= f.input :title, input_html: { class: "form-control" }
 	.form-group
