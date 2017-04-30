@@ -1,6 +1,7 @@
 class PicturesController < ApplicationController
 
-	before_action :find_picture, only: [:show, :edit, :update, :destroy]
+	before_action :find_picture, only: [:show, :edit, :update, :destroy, :upvote]
+	before_action :authenticate_user!, except: [:index, :show]
 
 
 	def index
@@ -48,5 +49,10 @@ class PicturesController < ApplicationController
 	def find_picture
 	 @picture = Picture.find(params[:id])	
 	end
+
+	def upvote
+	  @picture.upvote_by current_user
+	  redirect_to :back
+	end	
 
 end
