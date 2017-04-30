@@ -2,7 +2,7 @@
 	#pics.transitions.enabled
 		- @pictures.each do |picture|
 			.box.panel.panel-default
-				= link_to (image_tag picture.image.url(:medium)), picture
+				= link_to (image_tag picture.image.url), picture
 				%h2= link_to picture.title, picture
 
 
