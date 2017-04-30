@@ -40,6 +40,11 @@ class PicturesController < ApplicationController
 	 redirect_to root_path	
 	end	
 
+	def upvote
+	  @picture.upvote_by current_user
+	  redirect_to :back
+	end	
+
 	private
 
 	def picture_params
@@ -50,9 +55,5 @@ class PicturesController < ApplicationController
 	 @picture = Picture.find(params[:id])	
 	end
 
-	def upvote
-	  @picture.upvote_by current_user
-	  redirect_to :back
-	end	
 
 end
