@@ -7,7 +7,8 @@
 		%ul
 			-@picture.erors.full_messages.each do |message|
 				%li= message 	 	  
-		
+	.form-gorup
+		= f.input :image, input_html: { class: "form-control" }	
 	.form-gorup
 		= f.input :title, input_html: { class: "form-control" }
 	.form-group
