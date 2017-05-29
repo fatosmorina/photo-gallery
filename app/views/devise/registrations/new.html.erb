@@ -18,7 +18,8 @@
 		   			 	<%= f.password_field :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), class: "form-control" %>
 		   			</div>
 
-		   			<div class="form-group"> 	 <%= f.field :password_confirmation %>
+		   			<div class="form-group"> 	 
+		   				<%= f.label :password_confirmation %>
 		   			 	<%= f.password_field :password_confirmation, required: true, class: "form-control" %>
 					</div>
 
